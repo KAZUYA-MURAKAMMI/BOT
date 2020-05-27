@@ -402,13 +402,13 @@ public class KitchenSinkController {
                         "項目を選択してください",
                         "項目一覧",
                         Arrays.asList(
-                                new PostbackAction("お客様情報",
+                                new MessageAction("お客様情報",
                                                    "お客様情報を表示します"),
-                                new PostbackAction("契約内容詳細",
+                                new MessageAction("契約内容詳細",
                                                    "契約内容詳細を表示します"),
-                                new PostbackAction("保有契約一覧",
+                                new MessageAction("保有契約一覧",
                                                    "保有契約一覧を表示します"),
-                                new PostbackAction("解約",
+                                new MessageAction("解約",
                                                   "解約についてはこちらをご覧ください")
                         ));
                 TemplateMessage templateMessage = new TemplateMessage("Button alt text", buttonsTemplate);
