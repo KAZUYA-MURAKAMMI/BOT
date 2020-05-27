@@ -396,8 +396,11 @@ public class KitchenSinkController {
                 break;
             }
             case "メニュー": {
+                URI imageUrl = createUri("/static/buttons/1040.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
+                        imageUrl,
                         "項目を選択してください",
+                        "項目一覧",
                         Arrays.asList(
                                 new PostbackAction("お客様情報",
                                                    "お客様情報を表示します"),
