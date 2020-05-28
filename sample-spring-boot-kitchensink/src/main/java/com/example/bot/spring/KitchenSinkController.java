@@ -446,7 +446,7 @@ public class KitchenSinkController {
                                                 .build(),
                                         DatetimePickerAction.OfLocalDate
                                                 .builder()
-                                                .label("解約予定日等？")
+                                                .label("解約予定日等")
                                                 .data("action=sel&only=date")
                                                 .initial(LocalDate.parse("2017-06-18"))
                                                 .min(LocalDate.parse("2000-01-01"))
