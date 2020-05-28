@@ -397,76 +397,64 @@ public class KitchenSinkController {
             }
             case "メニュー": {
                 URI imageUrl = createUri("/static/buttons/1040.jpg");
-                ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
-                        imageUrl,
-                        "項目を選択してください",
-                        "項目一覧",
-                        Arrays.asList(
-                                new MessageAction("お客様情報",
-                                                   "お客様情報を表示します"),
-                                new MessageAction("契約内容詳細",
-                                                   "契約内容詳細を表示します"),
-                                new MessageAction("保有契約一覧",
-                                                   "保有契約一覧を表示します"),
-                                new MessageAction("解約",
-                                                  "解約についてはこちらをご覧ください")
-                        ));
-                TemplateMessage templateMessage = new TemplateMessage("Button alt text", buttonsTemplate);
-                this.reply(replyToken, templateMessage);
-                break;
-            }
-            case "carousel": {
-                URI imageUrl = createUri("/static/buttons/1040.jpg");
                 CarouselTemplate carouselTemplate = new CarouselTemplate(
                         Arrays.asList(
-                                new CarouselColumn(imageUrl, "hoge", "fuga", Arrays.asList(
-                                        new URIAction("Go to line.me",
+                                new CarouselColumn(imageUrl, "オンラインでのお手続き", "解約のお手続きはこちらから", Arrays.asList(
+                                        new URIAction("スミセイ公式ホームページ（仮）",
                                                       URI.create("https://line.me"), null),
-                                        new URIAction("Go to line.me",
-                                                      URI.create("https://line.me"), null),
-                                        new PostbackAction("Say hello1",
-                                                           "hello こんにちは")
+                                        new URIAction("ダイレクトサービス（仮）",
+                                                      URI.create("https://line.me"), null)
                                 )),
-                                new CarouselColumn(imageUrl, "hoge", "fuga", Arrays.asList(
-                                        new PostbackAction("言 hello2",
-                                                           "hello こんにちは",
-                                                           "hello こんにちは"),
-                                        new PostbackAction("言 hello2",
-                                                           "hello こんにちは",
-                                                           "hello こんにちは"),
-                                        new MessageAction("Say message",
-                                                          "Rice=米")
+                                new CarouselColumn(imageUrl, "契約内容の照会", "契約内容詳細、財産状況はこちらから", Arrays.asList(
+                                        new MessageAction("契約内容詳細（仮）",
+                                                   　　　　"契約内容詳細"),
+                                        new MessageAction("財産状況一覧（仮）",
+                                                   　　　　"財産状況一覧")
                                 )),
-                                new CarouselColumn(imageUrl, "Datetime Picker",
-                                                   "Please select a date, time or datetime", Arrays.asList(
-                                        DatetimePickerAction.OfLocalDatetime
+                             　　new CarouselColumn(imageUrl, "お客様情報", "登録個人情報、口座情報はこちらから", Arrays.asList(
+                                        new MessageAction("お客様登録情報（仮）",
+                                                   　　　　"お客様登録情報"),
+                                        new MessageAction("口座情報（仮）",
+                                                   　　　　"口座情報")
+                                )),
+                                new CarouselColumn(imageUrl, "プッシュ通知設定",
+                                                   "設定した日付にプッシュ通知を行います", Arrays.asList(
+                                        DatetimePickerAction.OfLocalDate
                                                 .builder()
-                                                .label("Datetime")
-                                                .data("action=sel")
-                                                .initial(LocalDateTime.parse("2017-06-18T06:15"))
-                                                .min(LocalDateTime.parse("1900-01-01T00:00"))
-                                                .max(LocalDateTime.parse("2100-12-31T23:59"))
+                                                .label("払込日付設定")
+                                                .data("action=sel&only=date")
+                                                .initial(LocalDate.parse("2017-06-18"))
+                                                .min(LocalDate.parse("2000-01-01"))
+                                                .max(LocalDate.parse("2020-12-31"))
                                                 .build(),
                                         DatetimePickerAction.OfLocalDate
                                                 .builder()
-                                                .label("Date")
+                                                .label("解約予定日等？")
                                                 .data("action=sel&only=date")
                                                 .initial(LocalDate.parse("2017-06-18"))
-                                                .min(LocalDate.parse("1900-01-01"))
-                                                .max(LocalDate.parse("2100-12-31"))
-                                                .build(),
-                                        DatetimePickerAction.OfLocalTime
-                                                .builder()
-                                                .label("Time")
-                                                .data("action=sel&only=time")
-                                                .initial(LocalTime.parse("06:15"))
-                                                .min(LocalTime.parse("00:00"))
-                                                .max(LocalTime.parse("23:59"))
+                                                .min(LocalDate.parse("2000-01-01"))
+                                                .max(LocalDate.parse("2020-12-31"))
                                                 .build()
                                 ))
                         ));
                 TemplateMessage templateMessage = new TemplateMessage("Carousel alt text", carouselTemplate);
                 this.reply(replyToken, templateMessage);
+                break;
+            }
+            case "契約内容詳細": {
+                this.replyText(replyToken, "契約内容詳細情報を取得し表示する想定です");
+                break;
+            }
+            case "財産状況一覧": {
+                this.replyText(replyToken, "財産状況一覧情報を取得し表示する想定です");
+                break;
+            }
+            case "お客様登録情報": {
+                this.replyText(replyToken, "お客様登録情報を取得し表示する想定です");
+                break;
+            }
+            case "口座情報": {
+                this.replyText(replyToken, "口座情報を取得し表示する想定です");
                 break;
             }
             case "image_carousel": {
