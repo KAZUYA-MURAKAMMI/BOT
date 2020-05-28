@@ -395,18 +395,22 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "メニューを参照するには証券番号の登録が必要です。");
                 break;
             }
-            case "type0notuse": {
+            case "buttons": {
+                URI imageUrl = createUri("/static/buttons/1040.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
-                        "項目を選択してください",
+                        imageUrl,
+                        "My button sample",
+                        "Hello, my button",
                         Arrays.asList(
-                                new PostbackAction("お客様情報",
-                                                   "お客様情報を表示します"),
-                                new PostbackAction("契約内容詳細",
-                                                   "契約内容詳細を表示します"),
-                                new PostbackAction("保有契約一覧",
-                                                   "保有契約一覧を表示します"),
-                                new PostbackAction("解約",
-                                                  "解約についてはこちらをご覧ください")
+                                new URIAction("Go to line.me",
+                                              URI.create("https://line.me"), null),
+                                new PostbackAction("Say hello1",
+                                                   "hello こんにちは"),
+                                new PostbackAction("言 hello2",
+                                                   "hello こんにちは",
+                                                   "hello こんにちは"),
+                                new MessageAction("Say message",
+                                                  "Rice=米")
                         ));
                 TemplateMessage templateMessage = new TemplateMessage("Button alt text", buttonsTemplate);
                 this.reply(replyToken, templateMessage);
