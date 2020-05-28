@@ -332,7 +332,7 @@ public class KitchenSinkController {
                                                           new TextMessage(
                                                                   "お客様名: " + profile.getDisplayName()),
                                                           new TextMessage(
-                                                                  "証券番号:~~~~~~~~。証券番号を登録した場合のみ照会、設定機能が使用できます。 "),
+                                                                  "証券番号:XXXX。証券番号を登録した場合のみ照会、設定機能が使用できます。 "),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
@@ -351,7 +351,7 @@ public class KitchenSinkController {
                                             Arrays.asList(new TextMessage(
                                                                   "お客様名: " + profile.getDisplayName()),
                                                           new TextMessage(
-                                                                  "証券番号:~~~~~~~~。証券番号を登録した場合のみ照会、設定機能が使用できます。 "),
+                                                                  "証券番号:XXXX。証券番号を登録した場合のみ照会、設定機能が使用できます。 "),
                                                           new TextMessage("ステータスメッセージ: "
                                                                           + profile.getStatusMessage()))
                                     );
