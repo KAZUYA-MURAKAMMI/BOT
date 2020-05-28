@@ -123,7 +123,7 @@
     <!--<module name="AvoidStarImport" />-->
     <module name="RedundantImport" />
     <module name="UnusedImports" />
-    <!--<module name="ImportOrder">
+    <!--<module name="ImportOrder">-->
       <property name="groups"
                 value="java,javax,org,android,net,/^com\.(?!linecorp\.|nhn\.|nhncorp\.).*$/,com.linecorp,com.nhn,com.nhncorp,jp.naver" />
       <property name="ordered" value="true" />
