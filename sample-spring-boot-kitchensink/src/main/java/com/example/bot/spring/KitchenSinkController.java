@@ -332,7 +332,7 @@ public class KitchenSinkController {
                                                           new TextMessage(
                                                                   "お客様名: " + profile.getDisplayName()),
                                                           new TextMessage(
-                                                                  "証券番号:0000000000。証券番号を登録した場合のみメニューを参照頂けます。 "),
+                                                                  "証券番号:~~~~~~~~。証券番号を登録した場合のみ照会、設定機能が使用できます。 "),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
@@ -351,7 +351,7 @@ public class KitchenSinkController {
                                             Arrays.asList(new TextMessage(
                                                                   "お客様名: " + profile.getDisplayName()),
                                                           new TextMessage(
-                                                                  "証券番号:0000000000。証券番号を登録した場合のみメニューを参照頂けます。 "),
+                                                                  "証券番号:~~~~~~~~。証券番号を登録した場合のみ照会、設定機能が使用できます。 "),
                                                           new TextMessage("ステータスメッセージ: "
                                                                           + profile.getStatusMessage()))
                                     );
@@ -387,11 +387,11 @@ public class KitchenSinkController {
                 break;
             }
             case "はい": {
-                this.replyText(replyToken, "メニューが参照頂けます。");
+                this.replyText(replyToken, "照会、設定機能が使用頂けます。");
                 break;
             }
             case "いいえ": {
-                this.replyText(replyToken, "メニューを参照するには証券番号の登録が必要です。");
+                this.replyText(replyToken, "照会、設定機能を使用するには証券番号の登録が必要です。証券番号を登録してください。");
                 break;
             }
             case "buttons": {
@@ -415,12 +415,12 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }
-            case "メニュー": {
+            case "照会、設定": {
                 URI imageUrl = createUri("/static/buttons/1040.jpg");
                 CarouselTemplate carouselTemplate = new CarouselTemplate(
                         Arrays.asList(
                                 new CarouselColumn(imageUrl, "オンラインでのお手続き", "解約のお手続きはこちらから", Arrays.asList(
-                                        new URIAction("スミセイ公式ホームページ（仮）",
+                                        new URIAction("スミセイ公式HP（仮）",
                                                       URI.create("https://line.me"), null),
                                         new URIAction("ダイレクトサービス（仮）",
                                                       URI.create("https://line.me"), null)
@@ -473,22 +473,25 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "口座情報を取得し表示する想定です");
                 break;
             }
-            case "image_carousel": {
+            case "メニュー": {
                 URI imageUrl = createUri("/static/buttons/1040.jpg");
                 ImageCarouselTemplate imageCarouselTemplate = new ImageCarouselTemplate(
                         Arrays.asList(
                                 new ImageCarouselColumn(imageUrl,
-                                                        new URIAction("Goto line.me",
-                                                                      URI.create("https://line.me"), null)
+                                                        new MessageAction("まずはじめに",
+                                                                          "チュートリアル")
                                 ),
                                 new ImageCarouselColumn(imageUrl,
-                                                        new MessageAction("Say message",
-                                                                          "Rice=米")
+                                                        new MessageAction("証券番号の登録",
+                                                                          "証券番号")
                                 ),
                                 new ImageCarouselColumn(imageUrl,
-                                                        new PostbackAction("言 hello2",
-                                                                           "hello こんにちは",
-                                                                           "hello こんにちは")
+                                                        new MessageAction("お客様情報",
+                                                                          "プロフィール")
+                                )
+                            　　new ImageCarouselColumn(imageUrl,
+                                                        new MessageAction("ご契約の照会、設定",
+                                                                          "照会、設定")
                                 )
                         ));
                 TemplateMessage templateMessage = new TemplateMessage("ImageCarousel alt text",
@@ -526,7 +529,7 @@ public class KitchenSinkController {
                         ))
                         .build());
                 break;
-            case "imagemap_video":
+            case "チュートリアル":
                 this.reply(replyToken, ImagemapMessage
                         .builder()
                         .baseUrl(createUri("/static/imagemap_video"))
