@@ -413,9 +413,9 @@ public class KitchenSinkController {
                                 )),
                             new CarouselColumn(imageUrl, "お客様情報", "登録個人情報や口座情報はこちらから", Arrays.asList(
                                         new MessageAction("お客様登録情報（仮）",
-                                                   　　　　"お客様登録情報"),
+                                                          "お客様登録情報"),
                                         new MessageAction("口座情報（仮）",
-                                                   　　　　"口座情報")
+                                                          "口座情報")
                                 )),
                                 new CarouselColumn(imageUrl, "プッシュ通知設定",
                                                    "設定した日付にプッシュ通知を行います", Arrays.asList(
