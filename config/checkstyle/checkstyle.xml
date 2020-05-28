@@ -130,7 +130,7 @@
       <property name="separated" value="true" />
       <property name="option" value="top" />
       <property name="sortStaticImportsAlphabetically" value="true" />
-    </module>-->
+    </module>
 
     <module name="AtclauseOrder" />
     <module name="JavadocType">
