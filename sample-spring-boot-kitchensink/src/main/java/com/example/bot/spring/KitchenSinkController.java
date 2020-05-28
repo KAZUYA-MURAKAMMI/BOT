@@ -405,13 +405,13 @@ public class KitchenSinkController {
                                         new URIAction("ダイレクトサービス（仮）",
                                                       URI.create("https://line.me"), null)
                                 )),
-                                new CarouselColumn(imageUrl, "契約内容の照会", "契約内容詳細、財産状況はこちらから", Arrays.asList(
-                                        new MessageAction("契約内容詳細（仮）",
-                                                   　　　　"契約内容詳細"),
-                                        new MessageAction("財産状況一覧（仮）",
-                                                   　　　　"財産状況一覧")
+                            new CarouselColumn(imageUrl, "契約内容の照会", "契約内容詳細や財産状況はこちらから", Arrays.asList(
+                                    new MessageAction("契約内容詳細（仮）",
+                                                      "契約内容詳細"),
+                                    new MessageAction("財産状況一覧（仮）",
+                                                      "財産状況一覧")
                                 )),
-                             　　new CarouselColumn(imageUrl, "お客様情報", "登録個人情報、口座情報はこちらから", Arrays.asList(
+                            new CarouselColumn(imageUrl, "お客様情報", "登録個人情報や口座情報はこちらから", Arrays.asList(
                                         new MessageAction("お客様登録情報（仮）",
                                                    　　　　"お客様登録情報"),
                                         new MessageAction("口座情報（仮）",
