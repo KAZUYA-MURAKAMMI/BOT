@@ -488,7 +488,7 @@ public class KitchenSinkController {
                                 new ImageCarouselColumn(imageUrl,
                                                         new MessageAction("お客様情報",
                                                                           "プロフィール")
-                                )
+                                ),
                                 new ImageCarouselColumn(imageUrl,
                                                         new MessageAction("ご契約の照会、設定",
                                                                           "照会、設定")
