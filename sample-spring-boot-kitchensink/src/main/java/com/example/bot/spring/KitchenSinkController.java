@@ -332,7 +332,9 @@ public class KitchenSinkController {
                                                           new TextMessage(
                                                                   "お客様名: " + profile.getDisplayName()),
                                                           new TextMessage(
-                                                                  "証券番号:XXXX。証券番号を登録した場合のみ照会、設定機能が使用できます。 "),
+                                                                  "証券番号:XXXXXXXXXX。登録済。"),
+                                                          new TextMessage(
+                                                                  "プッシュ通知機能:設定されていません。"),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
@@ -351,7 +353,9 @@ public class KitchenSinkController {
                                             Arrays.asList(new TextMessage(
                                                                   "お客様名: " + profile.getDisplayName()),
                                                           new TextMessage(
-                                                                  "証券番号:XXXX。証券番号を登録した場合のみ照会、設定機能が使用できます。 "),
+                                                                  "証券番号:XXXXXXXXXX。登録済。"),
+                                                          new TextMessage(
+                                                                  "プッシュ通知機能:設定されていません。"),
                                                           new TextMessage("ステータスメッセージ: "
                                                                           + profile.getStatusMessage()))
                                     );
@@ -434,7 +438,7 @@ public class KitchenSinkController {
                                         new MessageAction("口座情報（仮）", "口座情報")
                                 )),
                                 new CarouselColumn(imageUrl, "プッシュ通知設定",
-                                                   "設定した日付にプッシュ通知を行います", Arrays.asList(
+                                                   "設定した日付にプッシュ通知を行います（仮）", Arrays.asList(
                                         DatetimePickerAction.OfLocalDate
                                                 .builder()
                                                 .label("払込日付設定")
